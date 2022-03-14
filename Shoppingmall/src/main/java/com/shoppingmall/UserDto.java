@@ -4,7 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-// Lombok Test
+/**
+ * Lombok Test
+ * @ 2022-03-15 손지수
+ */
+
 @Getter
 @Setter
 @ToString

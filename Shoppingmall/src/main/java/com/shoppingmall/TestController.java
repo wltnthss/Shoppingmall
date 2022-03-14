@@ -3,7 +3,11 @@ package com.shoppingmall;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Lombok Test
+/**
+ * Lombok Test
+ * @ 2022-03-15 손지수
+ */
+
 @RestController
 public class TestController {
 
