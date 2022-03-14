@@ -19,7 +19,7 @@
 - Querydsl
 
 ### Database
-- Oracle
+- MySqL
 
 ### AWS
 - EC2
