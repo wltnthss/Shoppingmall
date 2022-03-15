@@ -1,7 +1,7 @@
 package com.shoppingmall.constant;
 
 /**
- * 상품 판매, 품절 상태 확인 클래스
+ * 상품 판매, 품절 상태 확인
  * @ 2022-03-15 손지수
  */
 

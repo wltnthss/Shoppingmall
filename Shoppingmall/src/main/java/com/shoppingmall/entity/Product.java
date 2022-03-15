@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- * 상품 변수 선언 Product Class 파일
+ * 상품 변수 선언
  * @ 2022-03-15 손지수
  */
 
