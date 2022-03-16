@@ -11,6 +11,11 @@ import java.util.List;
  */
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
+    // 상품 조회
     List<Product> findByProductName(String productName);
 
+    // 상품명 OR 상품 상세 설명 -> OR 쿼리 메소드
+    List<Product> findByProductNameOrDescription(String productName, String description);
+
+    List<Product> findByPriceLessThan(int price);
 }
