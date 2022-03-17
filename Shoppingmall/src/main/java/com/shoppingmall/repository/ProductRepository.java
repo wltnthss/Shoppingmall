@@ -25,4 +25,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     // 복잡한 쿼리를 위한 JPQL
     @Query("select i from Product i where i.description like %:description order by i.price desc")
     List<Product> findByDescription(@Param("description") String description);
+
 }
