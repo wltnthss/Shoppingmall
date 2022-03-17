@@ -74,6 +74,8 @@ class ProductRepositoryTest {
         }
     }
 
+    @Test
+    @DisplayName("가격 LessThan 테스트")
     public void findByPriceLessThanTest(){
         createProductList();
         List<Product> productList =
@@ -81,5 +83,17 @@ class ProductRepositoryTest {
         for (Product product : productList){
             System.out.println(product.toString());
         }
+    }
+
+    @Test
+    @DisplayName("@Query를 이용한 상품 조회 테스트")
+    public void findByDescriptionTest(){
+        createProductList();
+        List<Product> productList =
+                productRepository.findByDescription("테스트 상세 설명");
+        for(Product product : productList){
+            System.out.println(product.toString());
+        }
+
     }
 }
