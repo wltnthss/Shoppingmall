@@ -1,13 +1,18 @@
 package com.shoppingmall.repository;
 
+import com.querydsl.jpa.impl.JPAQuery;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.shoppingmall.constant.ProductSellStatus;
 import com.shoppingmall.entity.Product;
+import com.shoppingmall.entity.QProduct;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -23,6 +28,27 @@ class ProductRepositoryTest {
 
     @Autowired
     ProductRepository productRepository;
+
+    @PersistenceContext
+    EntityManager em;
+
+    @Test
+    @DisplayName("Querydsl 조회 테스트1")
+    public void queryDslTest(){
+        this.createProductList();
+        JPAQueryFactory queryFactory = new JPAQueryFactory(em);
+        QProduct qProduct = QProduct.product;
+        JPAQuery<Product> query = queryFactory.selectFrom(qProduct)
+                .where(qProduct.productSellStatus.eq(ProductSellStatus.SELL))
+                .where(qProduct.description.like("%" + "테스트 상세 설명" + "%"))
+                .orderBy(qProduct.price.desc());
+
+        List<Product> productList = query.fetch();
+
+        for(Product product : productList){
+            System.out.println(product.toString());
+        }
+    }
 
     @Test
     @DisplayName("상품 저장 테스트")

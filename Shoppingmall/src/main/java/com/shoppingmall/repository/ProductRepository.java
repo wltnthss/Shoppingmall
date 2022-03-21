@@ -3,6 +3,7 @@ package com.shoppingmall.repository;
 import com.shoppingmall.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * JPA Test
  * @ 2022-03-16 손지수
  */
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long>, QuerydslPredicateExecutor<Product> {
 
     // 상품 조회
     List<Product> findByProductName(String productName);
