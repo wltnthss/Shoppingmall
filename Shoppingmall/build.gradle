@@ -79,3 +79,20 @@ configurations {
 compileQuerydsl {
 	options.annotationProcessorPath = configurations.querydsl
 }
+
+
+/**
+ * spring-boot-devtools 설정
+ * thymeleaf 캐싱 기능(파일 수정 시 thymeleaf 파일 자동반영)
+ * Automatic Restart(클래스 수정 시 애플리케이션 restart)
+ * Live Reload(JS파일 수정 시 자동 브라우저 새로고침) -> build -> recompile ~.html 후 새로고침
+ */
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+dependencies {
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+}
