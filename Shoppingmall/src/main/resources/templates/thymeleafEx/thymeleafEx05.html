@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thymeleaf 링크처리 예제 </h1>
+    <div>
+        <a th:href="@{/thymeleaf/exam01}">예제1 페이지 이동</a>
+    </div>
+    <div>
+        <a th:href="@{https://www.thymeleaf.org/}">thymeleaf 공식 페이지로 이동하기</a>
+    </div>
+    <div>
+        <a th:href="@{/thymeleaf/exam06(param1 = '페이지', param2 = '순서')}">thymeleaf 파라미터 전달 테스트</a>
+    </div>
+</body>
+</html>
