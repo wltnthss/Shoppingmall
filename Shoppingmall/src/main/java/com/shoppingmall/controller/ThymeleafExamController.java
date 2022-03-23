@@ -66,4 +66,16 @@ public class ThymeleafExamController {
         model.addAttribute("productDtoList", productDtoList);
         return "thymeleafEx/thymeleafEx04";
     }
+
+    @GetMapping(value = "/exam05")
+    public String thymeleafExample05(Model model) {
+        return "thymeleafEx/thymeleafEx05";
+    }
+
+    @GetMapping(value = "/exam06")
+    public String thymeleafExample06(String param1, String param2, Model model) {
+        model.addAttribute("pg", param1);
+        model.addAttribute("seq", param2);
+        return "thymeleafEx/thymeleafEx06";
+    }
 }
