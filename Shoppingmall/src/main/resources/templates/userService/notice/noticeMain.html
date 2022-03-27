@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <td>번호</td>
+        <td>제목</td>
+        <td>내용</td>
+        <td>조회수</td>
+        <td>등록날짜</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="noticeList, status: ${noticeList}">
+            <td th:text="${noticeList.noticeNum}"></td>
+            <td th:text="${noticeList.noticeTitle}"></td>
+            <td th:text="${noticeList.noticeContent}"></td>
+            <td th:text="${noticeList.noticeViewNum}"></td>
+            <td th:text="${noticeList.noticeDateTime}"></td>
+        </tr>
+    </tbody>
+</table>
+<a href="/userService/notice/find?test=1">테스트</a>
+</body>
+</html>
+
