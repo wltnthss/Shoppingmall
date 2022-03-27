@@ -78,4 +78,9 @@ public class ThymeleafExamController {
         model.addAttribute("seq", param2);
         return "thymeleafEx/thymeleafEx06";
     }
+
+    @GetMapping(value = "/exam07")
+    public String thymeleafExample07(){
+        return "thymeleafEx/thymeleafEx07";
+    }
 }
