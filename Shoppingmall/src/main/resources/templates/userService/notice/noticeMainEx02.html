@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <td>번호</td>
+        <td>제목</td>
+        <td>내용</td>
+        <td>조회수</td>
+        <td>등록날짜</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td th:text="${noticeDto.noticeNum}"></td>
+            <td th:text="${noticeDto.noticeTitle}"></td>
+            <td th:text="${noticeDto.noticeContent}"></td>
+            <td th:text="${noticeDto.noticeViewNum}"></td>
+            <td th:text="${noticeDto.noticeDateTime}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
