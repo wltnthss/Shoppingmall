@@ -13,8 +13,8 @@ public class ShoppingmallApplication {
 		SpringApplication.run(ShoppingmallApplication.class, args);
 	}
 
-@GetMapping(value = "/")
-public String HelloWorld(){
-	return "Hello World";
-}
+//@GetMapping(value = "/")
+//public String HelloWorld(){
+//	return "Hello World";
+//}
 }
