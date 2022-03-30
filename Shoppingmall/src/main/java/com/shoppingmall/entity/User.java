@@ -40,7 +40,7 @@ public class User {
         user.setEmail(userFormDto.getEmail());
         user.setAddress(userFormDto.getAddress());
         String password = passwordEncoder.encode(userFormDto.getPassword());    // 비밀번호 암호화 설정
-        user.setPassword(userFormDto.getPassword());
+        user.setPassword(password);
         user.setRole(Role.USER);
         return user;
     }
