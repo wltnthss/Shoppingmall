@@ -16,6 +16,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 고객센터 Controller
+ * @ 2022-03-31 박창용
+ */
 @Controller
 @RequestMapping(value = "/userService")   // url에 thymeleaf 경로 요청이 오면 Controller가 역할을 위임
 public class UserServiceController {
