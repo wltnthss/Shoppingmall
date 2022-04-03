@@ -44,4 +44,18 @@ public class UserController {
         }
         return "redirect:/";
     }
+
+    public String newMember(@Valid UserFormDto userFormDto, BindingResult bindingResult, Model model){
+        if(bindingResult.hasErrors()){
+            return "user/userForm";
+        }
+        try{
+            User user = User.createUser(userFormDto,passwordEncoder);
+            userService.saveUser(user);
+        }catch (IllegalAccessError e){
+            model.addAttribute("errorMessage", e.getMessage());
+            return "user/userForm";
+        }
+        return "redirec:/";
+    }
 }
