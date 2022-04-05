@@ -1,6 +1,5 @@
 package com.shoppingmall.entity;
 
-import com.shoppingmall.UserDto;
 import com.shoppingmall.constant.Role;
 import com.shoppingmall.dto.UserFormDto;
 import lombok.Getter;
